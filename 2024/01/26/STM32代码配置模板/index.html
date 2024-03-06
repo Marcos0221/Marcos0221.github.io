@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="STM32代码配置模板快捷导航GPIO配置串口配置串口中断接收EXTI中断  GPIO配置123456789101112&#x2F;&#x2F; 开启时钟RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOX, ENABLE);&#x2F;&#x2F; GPIO结构体配置GPIO_InitTypeDef GPIO_InitStructure;GPIO_InitStructure.GPIO_Mode &#x3D; G">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STM32代码配置模板">
+<meta property="og:url" content="http://example.com/2024/01/26/STM32%E4%BB%A3%E7%A0%81%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF/index.html">
+<meta property="og:site_name" content="繁星&#39;s Blog">
+<meta property="og:description" content="STM32代码配置模板快捷导航GPIO配置串口配置串口中断接收EXTI中断  GPIO配置123456789101112&#x2F;&#x2F; 开启时钟RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOX, ENABLE);&#x2F;&#x2F; GPIO结构体配置GPIO_InitTypeDef GPIO_InitStructure;GPIO_InitStructure.GPIO_Mode &#x3D; G">
+<meta property="og:locale">
+<meta property="article:published_time" content="2024-01-26T06:38:12.000Z">
+<meta property="article:modified_time" content="2024-03-03T08:35:40.244Z">
+<meta property="article:author" content="繁星大大哟">
+<meta property="article:tag" content="STM32">
+<meta name="twitter:card" content="summary">
+
+
+<title >STM32代码配置模板</title>
+
+<!-- Favicon -->
+
+    <link href='/apple.svg?v=2.1.10' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='/apple.svg?v=2.1.10' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+    <link href='/apple.svg?v=2.1.10' rel='apple-touch-icon' sizes='180x180' ></link>
+
+
+    <link href='/site.webmanifest' rel='manifest' ></link>
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"繁星大大哟","root":"/","typed_text":["Bug Maker"],"theme_version":"2.1.10","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"apple.svg","icon16":"apple.svg","icon32":"apple.svg","appleTouchIcon":"apple.svg","webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://npm.elemecdn.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"mac","height_limit":200},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-03-03 16:35:40"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.10" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="/apple.svg">
+    
+    
+        <div class="trm-logo-text">
+            Async<span>繁星</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    首页
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/archives2/" target="">
+                            archives2
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/categories/" target="">
+                    分类
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4"></div>
+                
+                <div class="col-lg-8">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            STM32代码配置模板
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+                <div class="trm-page-sidebar col-lg-4 hidden-sm">
+                    <!-- main card -->
+                    <div class="trm-main-card-frame trm-sidebar">
+    <div class="trm-main-card"> 
+        <!-- card header -->
+<div class="trm-mc-header">
+    <div class="trm-avatar-frame trm-mb-20">
+        <img alt="Avatar" class="trm-avatar" src="http://q1.qlogo.cn/g?b=qq&nk=3091977221&s=640">
+    </div>
+    <h5 class="trm-name trm-mb-15">
+        繁星大大呦
+    </h5>
+    
+        <div class="trm-label">
+            I`m
+            <span class="trm-typed-text">
+                <!-- Words for theme.user.typedText -->
+            </span>
+        </div>
+    
+</div>
+<!-- card header end -->
+        <!-- sidebar social -->
+
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<div class="trm-social">
+    
+        <a href="https://github.com" title="github" rel="nofollow" target="_blank">
+            <i class="iconfont fab fa-github"></i>
+        </a>
+    
+        <a href="https://gitee.com" title="gitee" rel="nofollow" target="_blank">
+            <i class="iconfont iconfont cg-gitee"></i>
+        </a>
+    
+</div>
+
+<!-- sidebar social end -->
+        <!-- info -->
+<div class="trm-divider trm-mb-40 trm-mt-40"></div>
+<ul class="trm-table trm-mb-20">
+    
+        <li>
+            <div class="trm-label">
+                CITY:
+            </div>
+            <div class="trm-label trm-label-light">
+                GUANGAN
+            </div>
+        </li>
+    
+        <li>
+            <div class="trm-label">
+                AGE:
+            </div>
+            <div class="trm-label trm-label-light">
+                19
+            </div>
+        </li>
+    
+</ul>
+<!-- info end -->
+
+        
+    <div class="trm-divider trm-mb-40 trm-mt-40"></div>
+    <!-- action button -->
+    <div class="text-center">
+        <a href="mailto:3091977221@qq.com" class="trm-btn">
+            联系我
+            <i class="iconfont far fa-envelope"></i>
+        </a>
+    </div>
+    <!-- action button end -->
+
+    </div>
+</div>
+                    <!-- main card end -->
+                </div>
+            
+            <div class="trm-page-content col-lg-8">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            01/26
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            14:38
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            繁星大大哟
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <h1 id="STM32代码配置模板"><a href="#STM32代码配置模板" class="headerlink" title="STM32代码配置模板"></a>STM32代码配置模板</h1><h2 id="快捷导航"><a href="#快捷导航" class="headerlink" title="快捷导航"></a>快捷导航</h2><p><a href="#t01">GPIO配置</a><br><a href="#t02">串口配置</a><br><a href="#t03">串口中断接收</a><br><a href="#t04">EXTI中断</a></p>
+<p><span id="t01"></span></p>
+<h2 id="GPIO配置"><a href="#GPIO配置" class="headerlink" title="GPIO配置"></a>GPIO配置</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开启时钟</span></span><br><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOX, ENABLE);</span><br><span class="line"><span class="comment">// GPIO结构体配置</span></span><br><span class="line">GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;        <span class="comment">// GPIO 模式</span></span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_X;              <span class="comment">// GPIO 引脚</span></span><br><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;       <span class="comment">// GPIO 速度</span></span><br><span class="line"><span class="comment">// 初始化GPIO</span></span><br><span class="line">GPIO_Init(GPIOX, &amp;GPIO_InitStructure);</span><br><span class="line"><span class="comment">// 设置初始电平</span></span><br><span class="line">GPIO_SetBits(GPIOX, GPIO_Pin_X);</span><br><span class="line"><span class="comment">// GPIO_ResetBits(GPIOX, GPIO_Pin_X);</span></span><br></pre></td></tr></table></figure>
+
+<p><span id="t02"></span></p>
+<h2 id="串口配置"><a href="#串口配置" class="headerlink" title="串口配置"></a>串口配置</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开启时钟</span></span><br><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOX, ENABLE);</span><br><span class="line">RCC_APB1PeriphClockCmd(RCC_APB1Periph_USARTXX, ENABLE);</span><br><span class="line"></span><br><span class="line"><span class="comment">// GPIO结构体配置</span></span><br><span class="line">GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;         <span class="comment">// GPIO 模式</span></span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_X;              <span class="comment">// GPIO 引脚</span></span><br><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;       <span class="comment">// GPIO 速度</span></span><br><span class="line">GPIO_Init(GPIOX, &amp;GPIO_InitStructure);</span><br><span class="line"></span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;   <span class="comment">// GPIO 模式</span></span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_X;              <span class="comment">// GPIO 引脚</span></span><br><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;       <span class="comment">// GPIO 速度</span></span><br><span class="line">GPIO_Init(GPIOB, &amp;GPIO_InitStructure);</span><br><span class="line"></span><br><span class="line">USART_InitTypeDef USART_InitStruct;</span><br><span class="line">USART_InitStruct.USART_BaudRate = <span class="number">9600</span>;     <span class="comment">// 波特率</span></span><br><span class="line">USART_InitStruct.USART_HardwareFlowControl = USART_HardwareFlowControl_None;        <span class="comment">// 硬件流控制</span></span><br><span class="line">USART_InitStruct.USART_Mode = USART_Mode_Tx | USART_Mode_Rx;        <span class="comment">// 串口模式</span></span><br><span class="line">USART_InitStruct.USART_Parity = USART_Parity_No;        <span class="comment">// 奇偶校验位</span></span><br><span class="line">USART_InitStruct.USART_StopBits = USART_StopBits_1;     <span class="comment">// 停止位</span></span><br><span class="line">USART_InitStruct.USART_WordLength = USART_WordLength_8b;        <span class="comment">// 数据长度</span></span><br><span class="line">USART_Init(USART3, &amp;USART_InitStruct);</span><br><span class="line"></span><br><span class="line">USART_ITConfig(USART3, USART_IT_RXNE, ENABLE);      <span class="comment">// 串口中断配置</span></span><br><span class="line"></span><br><span class="line">NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);     <span class="comment">// NVIC中断分组</span></span><br><span class="line"></span><br><span class="line">NVIC_InitTypeDef NVIC_InitStruct;</span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannel = USART3_IRQn;      <span class="comment">// 中断通道</span></span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannelCmd = ENABLE;        <span class="comment">// 中断使能</span></span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority = <span class="number">1</span>;      <span class="comment">// 抢占优先级</span></span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannelSubPriority = <span class="number">1</span>;     <span class="comment">// 响应优先级</span></span><br><span class="line">NVIC_Init(&amp;NVIC_InitStruct);</span><br><span class="line"></span><br><span class="line">USART_Cmd(USART3, ENABLE);      <span class="comment">// 串口使能</span></span><br></pre></td></tr></table></figure>
+
+<p><span id="t03"></span></p>
+<h2 id="串口中断接收"><a href="#串口中断接收" class="headerlink" title="串口中断接收"></a>串口中断接收</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">USART3_IRQHandler</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">/// 判断串口接收标志位，是否接收完成</span></span><br><span class="line">    <span class="keyword">if</span>(USART_GetFlagStatus(USART3, USART_FLAG_RXNE) == SET)&#123;</span><br><span class="line">        <span class="type">uint8_t</span> recevieData = USART_ReceiveData(USART3);    <span class="comment">// 串口收到的数据</span></span><br><span class="line">        <span class="comment">/* ... */</span></span><br><span class="line"></span><br><span class="line">        USART_ClearITPendingBit(USART3, USART_IT_RXNE);     <span class="comment">// 清除中断接收的标志位</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><span id="t04"></span></p>
+<h2 id="EXTI中断"><a href="#EXTI中断" class="headerlink" title="EXTI中断"></a>EXTI中断</h2><p><strong>EXTI通道表</strong></p>
+<ul>
+<li>EXTI1_IRQn </li>
+<li>EXTI2_IRQn</li>
+<li>EXTI3_IRQn</li>
+<li>EXTI4_IRQn</li>
+<li>EXTI9_5_IRQn</li>
+<li>EXTI15_10_IRQn</li>
+</ul>
+<p><strong>重定义中断函数的函数名</strong></p>
+<ul>
+<li>EXTI0_IRQHandler</li>
+<li>EXTI1_IRQHandler</li>
+<li>EXTI2_IRQHandler</li>
+<li>EXTI3_IRQHandler</li>
+<li>EXTI4_IRQHandler</li>
+<li>EXTI9_5_IRQHandler</li>
+<li>EXTI15_10_IRQHandler</li>
+</ul>
+<p><strong>不能直接复制使用，需要修改一些东西</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOX,ENABLE);<span class="comment">//开启时钟</span></span><br><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);<span class="comment">//开启时钟</span></span><br><span class="line"><span class="comment">//EXTI和NVIC两个外设的时钟一直都是打开的</span></span><br><span class="line"><span class="comment">//NVIC是内核的外设，是不需要开启时钟的</span></span><br><span class="line">GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_X;</span><br><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;<span class="comment">//上拉输入</span></span><br><span class="line">GPIO_Init(GPIOX, &amp;GPIO_InitStructure);</span><br><span class="line"></span><br><span class="line"><span class="comment">//PB14号引脚的电平信号，就顺利通过了AFIO,进入到后级的EXTI电路了</span></span><br><span class="line">GPIO_EXTILineConfig(GPIO_PortSourceGPIOX,GPIO_PinSourceX);</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化EXTI</span></span><br><span class="line">EXTI_InitTypeDef EXTI_InitStructure;</span><br><span class="line">EXTI_InitStructure.EXTI_Line=EXTI_LineX;<span class="comment">//14行</span></span><br><span class="line">EXTI_InitStructure.EXTI_LineCmd=ENABLE;<span class="comment">//开启</span></span><br><span class="line">EXTI_InitStructure.EXTI_Mode=EXTI_Mode_Interrupt;<span class="comment">//中断模式</span></span><br><span class="line">EXTI_InitStructure.EXTI_Trigger=EXTI_Trigger_Falling;<span class="comment">//下降沿触发</span></span><br><span class="line">EXTI_Init(&amp;EXTI_InitStructure);</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置NVIC</span></span><br><span class="line"><span class="comment">//分组方式整个芯片就只能用一组</span></span><br><span class="line"><span class="comment">//可以放到主函数的最开始</span></span><br><span class="line"><span class="comment">//放到模块里需要保证每个模块一致</span></span><br><span class="line"><span class="comment">//取值范围抢占优先级（0-3），响应优先级（0-3）</span></span><br><span class="line">NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);</span><br><span class="line"></span><br><span class="line">NVIC_InitTypeDef NVIC_InitStruct;</span><br><span class="line"><span class="comment">//选择对应的中断通道</span></span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannel=EXTIX_IRQn;</span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannelCmd=ENABLE;</span><br><span class="line"><span class="comment">//设置抢占优先级（0-3）</span></span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority=<span class="number">1</span>;</span><br><span class="line"><span class="comment">//设置响应优先级（0-3）</span></span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannelSubPriority=<span class="number">1</span>;</span><br><span class="line">NVIC_Init(&amp;NVIC_InitStruct);</span><br></pre></td></tr></table></figure>
+
+
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2024/03/02/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" /categories/Android/">
+                    Android
+                </a>
+            </div>
+            <h5>
+                <a href="/2024/03/02/%E5%AE%89%E5%8D%93%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/" class="trm-anima-link">
+                    安卓开发踩坑记录
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>24/03/02</li>
+                <li>20:11</li>
+                
+                    <li>261</li>
+                
+                
+                    <li>1</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-blog-card trm-scroll-animation">
+        <a href="/2023/10/25/%E7%94%B5%E5%B7%A5%E5%9F%BA%E7%A1%80/" class="trm-cover-frame trm-anima-link">
+            
+            
+                <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+            
+        </a>
+        
+        <div class="trm-card-descr">
+            <div class="trm-label trm-category trm-mb-20">
+                <a href=" #.">
+                    未分类
+                </a>
+            </div>
+            <h5>
+                <a href="/2023/10/25/%E7%94%B5%E5%B7%A5%E5%9F%BA%E7%A1%80/" class="trm-anima-link">
+                    电工基础
+                </a>
+            </h5>
+            <div class="trm-divider trm-mb-20 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/10/25</li>
+                <li>16:45</li>
+                
+                    <li>263</li>
+                
+                
+                    <li>1</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation">
+
+    
+
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v7.1.1
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.1.10
+            </span>
+        </div>
+      
+
+     
+
+     
+</footer>
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+            
+<div class="trm-fixed-container">
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://npm.elemecdn.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+        <script src="/js/plugins/typing.js?v=2.1.10"></script>
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.1.10"></script>
+
+</body>
+
+</html>
