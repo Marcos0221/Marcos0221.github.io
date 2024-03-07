@@ -7,15 +7,15 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="STM32代码配置模板快捷导航GPIO配置串口配置串口中断接收EXTI中断  GPIO配置123456789101112&#x2F;&#x2F; 开启时钟RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOX, ENABLE);&#x2F;&#x2F; GPIO结构体配置GPIO_InitTypeDef GPIO_InitStructure;GPIO_InitStructure.GPIO_Mode &#x3D; G">
+<meta name="description" content="STM32代码配置模板快捷导航GPIO配置串口配置串口中断接收EXTI中断外设的GPIO配置  GPIO配置123456789101112&#x2F;&#x2F; 开启时钟RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOX, ENABLE);&#x2F;&#x2F; GPIO结构体配置GPIO_InitTypeDef GPIO_InitStructure;GPIO_InitStructure.GPIO">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STM32代码配置模板">
 <meta property="og:url" content="http://example.com/2024/01/26/STM32%E4%BB%A3%E7%A0%81%E9%85%8D%E7%BD%AE%E6%A8%A1%E6%9D%BF/index.html">
 <meta property="og:site_name" content="繁星&#39;s Blog">
-<meta property="og:description" content="STM32代码配置模板快捷导航GPIO配置串口配置串口中断接收EXTI中断  GPIO配置123456789101112&#x2F;&#x2F; 开启时钟RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOX, ENABLE);&#x2F;&#x2F; GPIO结构体配置GPIO_InitTypeDef GPIO_InitStructure;GPIO_InitStructure.GPIO_Mode &#x3D; G">
+<meta property="og:description" content="STM32代码配置模板快捷导航GPIO配置串口配置串口中断接收EXTI中断外设的GPIO配置  GPIO配置123456789101112&#x2F;&#x2F; 开启时钟RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOX, ENABLE);&#x2F;&#x2F; GPIO结构体配置GPIO_InitTypeDef GPIO_InitStructure;GPIO_InitStructure.GPIO">
 <meta property="og:locale">
 <meta property="article:published_time" content="2024-01-26T06:38:12.000Z">
-<meta property="article:modified_time" content="2024-03-03T08:35:40.244Z">
+<meta property="article:modified_time" content="2024-03-07T12:40:49.280Z">
 <meta property="article:author" content="繁星大大哟">
 <meta property="article:tag" content="STM32">
 <meta name="twitter:card" content="summary">
@@ -64,7 +64,7 @@
 
 <!-- Variable -->
 <script>window.ASYNC_CONFIG = {"hostname":"example.com","author":"繁星大大哟","root":"/","typed_text":["Bug Maker"],"theme_version":"2.1.10","theme":{"switch":true,"default":"style-light"},"favicon":{"logo":"apple.svg","icon16":"apple.svg","icon32":"apple.svg","appleTouchIcon":"apple.svg","webmanifest":"/site.webmanifest","visibilitychange":true,"hidden":"failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","sticky":"置顶","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://npm.elemecdn.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"mac","height_limit":200},"toc":{"post_title":true},"live_time":{"start_time":"","prefix":"博客已萌萌哒运行 undefined 天"}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-03-03 16:35:40"};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-03-07 20:40:49"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.10" id="trm-switch-style">
@@ -360,7 +360,7 @@
 </div>
 <div class="trm-card ">
     <article id="article-container" class="trm-publication">
-    <h1 id="STM32代码配置模板"><a href="#STM32代码配置模板" class="headerlink" title="STM32代码配置模板"></a>STM32代码配置模板</h1><h2 id="快捷导航"><a href="#快捷导航" class="headerlink" title="快捷导航"></a>快捷导航</h2><p><a href="#t01">GPIO配置</a><br><a href="#t02">串口配置</a><br><a href="#t03">串口中断接收</a><br><a href="#t04">EXTI中断</a></p>
+    <h1 id="STM32代码配置模板"><a href="#STM32代码配置模板" class="headerlink" title="STM32代码配置模板"></a>STM32代码配置模板</h1><h2 id="快捷导航"><a href="#快捷导航" class="headerlink" title="快捷导航"></a>快捷导航</h2><p><a href="#t01">GPIO配置</a><br><a href="#t02">串口配置</a><br><a href="#t03">串口中断接收</a><br><a href="#t04">EXTI中断</a><br><a href="#t05">外设的GPIO配置</a></p>
 <p><span id="t01"></span></p>
 <h2 id="GPIO配置"><a href="#GPIO配置" class="headerlink" title="GPIO配置"></a>GPIO配置</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开启时钟</span></span><br><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOX, ENABLE);</span><br><span class="line"><span class="comment">// GPIO结构体配置</span></span><br><span class="line">GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;        <span class="comment">// GPIO 模式</span></span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_X;              <span class="comment">// GPIO 引脚</span></span><br><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;       <span class="comment">// GPIO 速度</span></span><br><span class="line"><span class="comment">// 初始化GPIO</span></span><br><span class="line">GPIO_Init(GPIOX, &amp;GPIO_InitStructure);</span><br><span class="line"><span class="comment">// 设置初始电平</span></span><br><span class="line">GPIO_SetBits(GPIOX, GPIO_Pin_X);</span><br><span class="line"><span class="comment">// GPIO_ResetBits(GPIOX, GPIO_Pin_X);</span></span><br></pre></td></tr></table></figure>
 
@@ -393,7 +393,150 @@
 <p><strong>不能直接复制使用，需要修改一些东西</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOX,ENABLE);<span class="comment">//开启时钟</span></span><br><span class="line">RCC_APB2PeriphClockCmd(RCC_APB2Periph_AFIO,ENABLE);<span class="comment">//开启时钟</span></span><br><span class="line"><span class="comment">//EXTI和NVIC两个外设的时钟一直都是打开的</span></span><br><span class="line"><span class="comment">//NVIC是内核的外设，是不需要开启时钟的</span></span><br><span class="line">GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">GPIO_InitStructure.GPIO_Pin = GPIO_Pin_X;</span><br><span class="line">GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;</span><br><span class="line">GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;<span class="comment">//上拉输入</span></span><br><span class="line">GPIO_Init(GPIOX, &amp;GPIO_InitStructure);</span><br><span class="line"></span><br><span class="line"><span class="comment">//PB14号引脚的电平信号，就顺利通过了AFIO,进入到后级的EXTI电路了</span></span><br><span class="line">GPIO_EXTILineConfig(GPIO_PortSourceGPIOX,GPIO_PinSourceX);</span><br><span class="line"></span><br><span class="line"><span class="comment">//初始化EXTI</span></span><br><span class="line">EXTI_InitTypeDef EXTI_InitStructure;</span><br><span class="line">EXTI_InitStructure.EXTI_Line=EXTI_LineX;<span class="comment">//14行</span></span><br><span class="line">EXTI_InitStructure.EXTI_LineCmd=ENABLE;<span class="comment">//开启</span></span><br><span class="line">EXTI_InitStructure.EXTI_Mode=EXTI_Mode_Interrupt;<span class="comment">//中断模式</span></span><br><span class="line">EXTI_InitStructure.EXTI_Trigger=EXTI_Trigger_Falling;<span class="comment">//下降沿触发</span></span><br><span class="line">EXTI_Init(&amp;EXTI_InitStructure);</span><br><span class="line"></span><br><span class="line"><span class="comment">//配置NVIC</span></span><br><span class="line"><span class="comment">//分组方式整个芯片就只能用一组</span></span><br><span class="line"><span class="comment">//可以放到主函数的最开始</span></span><br><span class="line"><span class="comment">//放到模块里需要保证每个模块一致</span></span><br><span class="line"><span class="comment">//取值范围抢占优先级（0-3），响应优先级（0-3）</span></span><br><span class="line">NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);</span><br><span class="line"></span><br><span class="line">NVIC_InitTypeDef NVIC_InitStruct;</span><br><span class="line"><span class="comment">//选择对应的中断通道</span></span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannel=EXTIX_IRQn;</span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannelCmd=ENABLE;</span><br><span class="line"><span class="comment">//设置抢占优先级（0-3）</span></span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannelPreemptionPriority=<span class="number">1</span>;</span><br><span class="line"><span class="comment">//设置响应优先级（0-3）</span></span><br><span class="line">NVIC_InitStruct.NVIC_IRQChannelSubPriority=<span class="number">1</span>;</span><br><span class="line">NVIC_Init(&amp;NVIC_InitStruct);</span><br></pre></td></tr></table></figure>
 
+<p><span id="t05"></span></p>
+<h2 id="外设的GPIO配置"><a href="#外设的GPIO配置" class="headerlink" title="外设的GPIO配置"></a>外设的GPIO配置</h2><p><strong>这里摘录自STM32F10xxx参考手册.pdf 8.1.11 外设的GPIO配置</strong></p>
+<p><a href="#w01">TIM1&#x2F;TIM8(高级定时器)配置</a><br><a href="#w02">TIM2&#x2F;3&#x2F;4&#x2F;5(通用定时器)配置</a><br><a href="#w03">USART(串口)配置</a><br><a href="#w04">SPI配置</a><br><a href="#w05">I2S配置</a></p>
+<p><span id="w01"></span></p>
+<h3 id="TIM1-TIM8-高级定时器-配置"><a href="#TIM1-TIM8-高级定时器-配置" class="headerlink" title="TIM1&#x2F;TIM8(高级定时器)配置"></a>TIM1&#x2F;TIM8(高级定时器)配置</h3><table style="text-align:center;">
+    <thead>
+        <tr><td>TIM1/TIM8引脚</td><td>配置</td><td>GPIO配置</td></tr><tr>
+    </thead>
+        <td rowspan="2">TIM1/8_CHx</td><td>输入捕获通道x</td><td>浮空输入</td>
+    </tr>
+    <tr>
+        <td>输出比较通道x</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td>TIM1/8_CHxN</td><td>互补输出通道x</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td>TIM1/8_BKIN</td><td>刹车输入</td><td>浮空输入</td>
+    </tr>
+    <tr>
+        <td>TIM1/8_ETR</td><td>外部触发时钟输入</td><td>浮空输入</td>
+    </tr>
+</table>
 
+<p><span id="w02"></span></p>
+<h3 id="TIM2-3-4-5-通用定时器-配置"><a href="#TIM2-3-4-5-通用定时器-配置" class="headerlink" title="TIM2&#x2F;3&#x2F;4&#x2F;5(通用定时器)配置"></a>TIM2&#x2F;3&#x2F;4&#x2F;5(通用定时器)配置</h3><table style="text-align:center;">
+    <thead>
+        <tr><td>TIM2/3/4/5引脚</td><td>配置</td><td>GPIO配置</td></tr>
+    </thead>
+    <tr>
+        <td rowspan="2">TIM2/3/4/5_CHx</td><td>输入捕获通道x</td><td>浮空输入</td>
+    </tr>
+    <tr>
+        <td>输出比较通道x</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td>TIM2/3/4/5_ETR</td><td>外部触发时钟输入</td><td>浮空输入</td>
+    </tr>
+</table>
+
+<p><span id="w03"></span></p>
+<h3 id="USART-串口-配置"><a href="#USART-串口-配置" class="headerlink" title="USART(串口)配置"></a>USART(串口)配置</h3><table style="text-align:center;">
+    <thead>
+        <tr><td>USART引脚</td><td>配置</td><td>GPIO配置</td></tr>
+    </thead>
+    <tr>
+        <td rowspan="2">USARTx_TX</td><td>全双工模式</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td>半双工同步模式</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td rowspan="2">USARTx_RX</td><td>全双工模式</td><td>浮空输入或带上拉输入</td>
+    </tr>
+    <tr>
+        <td>半双工同步模式</td><td>未用，可作为通用I/O</td>
+    </tr>
+    <tr>
+        <td>USARTx_CK</td><td>同步模式</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td>USARTx_RTS</td><td>硬件流量控制</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td>USARTx_CTS</td><td>硬件流量控制</td><td>浮空输入或带上拉输入</td>
+    </tr>
+</table>
+
+<p><span id="w04"></span></p>
+<h3 id="SPI配置"><a href="#SPI配置" class="headerlink" title="SPI配置"></a>SPI配置</h3><table style="text-align:center;">
+    <thead>
+        <tr><td>SPI引脚</td><td>配置</td><td>GPIO配置</td></tr>
+    </thead>
+    <tr>
+        <td rowspan="2">SPIx_SCK</td><td>主模式</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td>从模式</td><td>浮空输入</td>
+    </tr>
+    <tr>
+        <td rowspan="4">SPIx_MOSI</td><td>全双工模式/主模式</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td>全双工模式/从模式</td><td>浮空输入或带上拉输入</td>
+    </tr>
+    <tr>
+        <td>简单的双向数据线/主模式</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td>简单的双向数据线/从模式</td><td>未用，可作为通用I/O</td>
+    </tr>
+    <tr>
+        <td rowspan="4">SPIx_MISO</td><td>全双工模式/主模式</td><td>浮空输入或带上拉输入</td>
+    </tr>
+    <tr>
+        <td>全双工模式/从模式</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td>简单的双向数据线/主模式</td><td>未用，可作为通用I/O</td>
+    </tr>
+    <tr>
+        <td>简单的双向数据线/从模式</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td rowspan="3">SPIx_NSS</td><td>硬件主/从模式</td><td>推浮空输入或带上拉输入或带下拉输入</td>
+    </tr>
+    <tr>
+        <td>硬件主模式/NSS输出使能</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td>软件模式</td><td>未用，可作为通用I/O</td>
+    </tr>
+</table>
+
+<p><span id="w05"></span></p>
+<h3 id="I2S配置"><a href="#I2S配置" class="headerlink" title="I2S配置"></a>I2S配置</h3><table style="text-align:center;">
+    <thead>
+        <tr><td>I2S引脚</td><td>配置</td><td>GPIO配置</td></tr>
+    </thead>
+    <tr>
+        <td rowspan="2">I2Sx_WS</td><td>主模式</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td>从模式</td><td>浮空输入</td>
+    </tr>
+    <tr>
+        <td rowspan="2">I2Sx_CK</td><td>主模式</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td>从模式</td><td>浮空输入</td>
+    </tr>
+    <tr>
+        <td rowspan="2">I2Sx_SD</td><td>发送器</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td>接收器</td><td>浮空输入或带上拉输入或带下拉输入</td>
+    </tr>
+    <tr>
+        <td rowspan="2">I2Sx_MCK</td><td>主模式</td><td>推挽复用输出</td>
+    </tr>
+    <tr>
+        <td>从模式</td><td>未用，可作为通用I/O</td>
+    </tr>
+</table>
 </article>
     
     
