@@ -12,6 +12,22 @@ When setting the primary font stack, apply it to the Pure grid units along
 with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use
 specific font stacks to ensure the greatest OS/browser compatibility.
 */
+@font-face {
+  font-family: HYTangMeiRen35W;
+  src: url("../fonts/HYTangMeiRen35W.ttf");
+}
+@font-face {
+  font-family: HYTangMeiRen45W;
+  src: url("../fonts/HYTangMeiRen45W.ttf");
+}
+@font-face {
+  font-family: HYTangMeiRen55W;
+  src: url("../fonts/HYTangMeiRen55W.ttf");
+}
+@font-face {
+  font-family: HYTangMeiRen65W;
+  src: url("../fonts/HYTangMeiRen65W.ttf");
+}
 html,
 button,
 input,
@@ -75,6 +91,7 @@ div {
   text-align: left;
   border-bottom: 1px solid #ddd;
   position: relative;
+  font-family: "HYTangMeiRen55W";
 }
 #header .site-name {
   margin-bottom: 40px;
@@ -86,7 +103,7 @@ div {
   overflow: hidden;
 }
 #header .site-name #logo {
-  font: bold 38px/1.12 "Times New Roman", Georgia, Times, sans-serif;
+  font: bold 38px/1.12 "HYTangMeiRen45W", Georgia, Times, sans-serif;
   color: #555;
 }
 #header .site-name #logo span, #header .site-name #logo:hover {
@@ -236,7 +253,7 @@ div {
   margin: 0;
   color: #555;
   text-align: left;
-  font: bold 25px/1.1 "ff-tisa-web-pro", Cambria, "Times New Roman", Georgia, Times, sans-serif;
+  font: bold 25px/1.1 "ff-tisa-web-pro", Cambria, "HYTangMeiRen45W", Georgia, Times, sans-serif;
 }
 .post .post-title a {
   color: #555;
@@ -318,6 +335,7 @@ div {
   text-align: justify;
   text-justify: distribute;
   word-break: break-word;
+  font-family: "HYTangMeiRen55W";
 }
 .post .post-content h2 {
   margin: 1.4em 0 1.1em;
@@ -968,6 +986,7 @@ pre {
   border: 1px solid #ddd;
   border-radius: 5px;
   float: right;
+  font-family: "HYTangMeiRen55W";
 }
 .readmore a:after {
   font-family: "FontAwesome";
