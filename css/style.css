@@ -13,20 +13,12 @@ with `html`, `button`, `input`, `select`, and `textarea`. Pure Grids use
 specific font stacks to ensure the greatest OS/browser compatibility.
 */
 @font-face {
-  font-family: HYTangMeiRen35W;
-  src: url("../fonts/HYTangMeiRen35W.ttf");
-}
-@font-face {
   font-family: HYTangMeiRen45W;
   src: url("../fonts/HYTangMeiRen45W.ttf");
 }
 @font-face {
   font-family: HYTangMeiRen55W;
   src: url("../fonts/HYTangMeiRen55W.ttf");
-}
-@font-face {
-  font-family: HYTangMeiRen65W;
-  src: url("../fonts/HYTangMeiRen65W.ttf");
 }
 html,
 button,
