@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>问题记录</title>
+      <link href="/2025/03/14/1ec7f9a0c5ce/"/>
+      <url>/2025/03/14/1ec7f9a0c5ce/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><img src="https://pic1.imgdb.cn/item/67d2d9c988c538a9b5bc85fb.png" alt="题目描述1"></p><h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><h2 id="📙问题大全和解决方法"><a href="#📙问题大全和解决方法" class="headerlink" title="📙问题大全和解决方法"></a>📙问题大全和解决方法</h2><h3 id="ADC采样率怎么确定"><a href="#ADC采样率怎么确定" class="headerlink" title="ADC采样率怎么确定"></a>ADC采样率怎么确定</h3><p>根据奈奎斯特定理得出，ADC采样率至少要是采集目标频率的2倍，一般建议采样频率设置为5~10倍或更高。</p><h3 id="ADC采样率是越高越好吗"><a href="#ADC采样率是越高越好吗" class="headerlink" title="ADC采样率是越高越好吗"></a>ADC采样率是越高越好吗</h3><p>当然不是，不过高采样率不会影响低频信号的准确度（我当时采集1Hz信号时一直不对，怀疑过这里，不过经过验证，跟高采样率无关）。</p><h3 id="ADC的谐波怎么提取"><a href="#ADC的谐波怎么提取" class="headerlink" title="ADC的谐波怎么提取"></a>ADC的谐波怎么提取</h3><p>将FFT处理后的结果进行排序，除去最大值基波，然后其他的就是谐波。</p><h3 id="怎么根据谐波来确定波形的类型"><a href="#怎么根据谐波来确定波形的类型" class="headerlink" title="怎么根据谐波来确定波形的类型"></a>怎么根据谐波来确定波形的类型</h3><h4 id="根据谐波判断"><a href="#根据谐波判断" class="headerlink" title="根据谐波判断"></a>根据谐波判断</h4><ul><li><strong>正弦波</strong>: 各次谐波幅度几乎为零。</li><li><strong>方波</strong>：基波幅度最大，奇次谐波幅度按$\frac{1}{2}$（n为谐波次数）规律衰减，如三次谐波幅度约为基波的$\frac{1}{3}$，五次谐波约为$\frac{1}{5}$。</li><li><strong>三角波</strong>：基波幅度较大，奇次谐波幅度按$\frac{1}{n^2}$规律衰减，所以三次谐波幅度约为基波的$\frac{1}{9}$，五次谐波约为$\frac{1}{25}$。</li></ul><h4 id="根据RMS算法来判断"><a href="#根据RMS算法来判断" class="headerlink" title="根据RMS算法来判断"></a>根据RMS算法来判断</h4><ul><li><strong>正弦波</strong>：纯正弦波信号 RMS 值与峰值关系为$V_{RMS}&#x3D;\frac{V_{peak}}{\sqrt{2}}$ 。测量信号 RMS 值，若与按此公式依峰值算出的结果相近，且频谱分析谐波含量极低，可判断为正弦波。</li><li><strong>方波</strong>：方波 RMS 值等于幅值，即$V_{RMS}&#x3D;A$。测量信号幅值与 RMS 值，若二者相等，且频谱呈现基波幅度最大、奇次谐波幅度按$\frac{1}{n}$n 为谐波次数）规律衰减，可判断为方波。</li><li><strong>三角波</strong>：三角波 RMS 值与峰值关系为$V_{RMS}&#x3D;\frac{V_{peak}}{\sqrt{3}}$ 。测量信号 RMS 值，若符合此关系，且频谱中基波幅度较大、奇次谐波幅度按规律衰减，可判断为三角波。</li></ul><h3 id="高采样率采集低频信号误差大"><a href="#高采样率采集低频信号误差大" class="headerlink" title="高采样率采集低频信号误差大"></a>高采样率采集低频信号误差大</h3><p>在尝试用1Mhz的采样率采集50Hz信号时，偏差超级大，是ADC没有采集到完全的波形嘛？并不是，是高采样率加重了计算的误差，所以要采集50Hz~50Khz的信号的话应该对信号进行分档，这样的话会减少计算的误差。</p><h3 id="低频信号采样转换速度慢"><a href="#低频信号采样转换速度慢" class="headerlink" title="低频信号采样转换速度慢"></a>低频信号采样转换速度慢</h3><p>在采集1~10Hz的信号时，采样和转换的速度很慢，曾让我误以为是定时器配置错了，后面一思考，应该是采样点数和采样频率影响的。这里我降低了采样点数，由1024-&gt;128，速度一下就快起来了，这里由可以根据频率来确定采样点数了。</p><h4 id="挡位分配"><a href="#挡位分配" class="headerlink" title="挡位分配"></a>挡位分配</h4><table><thead><tr><th align="center"></th><th align="center">频率区间</th><th align="center">ADC采样率</th><th align="center">ADC采集点数</th><th align="center">分频系数</th></tr></thead><tbody><tr><td align="center">低速挡</td><td align="center">50Hz~500Hz</td><td align="center">2500Hz</td><td align="center">2048</td><td align="center">400</td></tr><tr><td align="center">中速档</td><td align="center">500Hz~5Khz</td><td align="center">25Khz</td><td align="center">4096</td><td align="center">40</td></tr><tr><td align="center">高速档</td><td align="center">5Khz~50Khz</td><td align="center">250Khz</td><td align="center">4096</td><td align="center">4</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 经验闲谈 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>算法与数据结构之—顺序表</title>
       <link href="/2025/02/08/c76f1a741c41/"/>
       <url>/2025/02/08/c76f1a741c41/</url>
@@ -115,7 +134,7 @@
       <link href="/2024/12/12/b465bfd7c1b3/"/>
       <url>/2024/12/12/b465bfd7c1b3/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>新年快乐呀，告别了略带遗憾的2024，来到了充满希望的2025，希望各位小伙伴们都学有所成，事业蒸蒸日上。</p></blockquote><p>在2024我已经立下了一个挑战，就是在2025年保持一整年，每天上传代码等到github仓库上，使热力图全绿，这被我称为“全绿计划”，接下来一整年就努力坚持这个计划，我预计每周汇报一次学习成果，以及项目进度，然后总的记录下来，作为我成长路上的一个见证，同时也锻炼了我的写作水平。</p><p>对于2024，我想我应该还不够努力，我想在2025更加努力，我的2024关键词自我总结应该是<code>嵌入式</code>,<code>电赛</code>,<code>C语言</code>吧。</p><p>2025.1.2，明天就要出发去嵌入式比赛了，大概三天没有空，需要断更</p><p>今天是2025.1.6，说来好笑，明明说全绿计划，结果在新年第三天就开始断了，其实也不然，毕竟很多时候忙起来无法抽身是很常见事情呢，不过我尽量还是保持每日更新吧。</p>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>新年快乐呀，告别了略带遗憾的2024，来到了充满希望的2025，希望各位小伙伴们都学有所成，事业蒸蒸日上。</p></blockquote><p>在2024我已经立下了一个挑战，就是在2025年保持一整年，每天上传代码等到github仓库上，使热力图全绿，这被我称为“全绿计划”，接下来一整年就努力坚持这个计划，我预计每周汇报一次学习成果，以及项目进度，然后总的记录下来，作为我成长路上的一个见证，同时也锻炼了我的写作水平。</p><p>对于2024，我想我应该还不够努力，我想在2025更加努力，我的2024关键词自我总结应该是<code>嵌入式</code>,<code>电赛</code>,<code>C语言</code>吧。</p><p>2025.1.2，明天就要出发去嵌入式比赛了，大概三天没有空，需要断更</p><p>今天是2025.1.6，说来好笑，明明说全绿计划，结果在新年第三天就开始断了，其实也不然，毕竟很多时候忙起来无法抽身是很常见事情呢，不过我尽量还是保持每日更新吧。</p><p>2025.3.14<br>全绿计划崩盘了，个人没有毅力，不过最近尝试作了21年电赛J题，还是挺有难度的，特别是误差要控制在1%。</p>]]></content>
       
       
       
