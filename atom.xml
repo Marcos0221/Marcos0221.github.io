@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Marcos0221</title>
+  <title>BraveGlide</title>
   
-  <subtitle>Marcos0221的独立博客 | 分享技术，享受生活</subtitle>
-  <link href="http://marcos0221.github.io/atom.xml" rel="self"/>
+  <subtitle>BraveGlide的独立博客 | 分享技术，享受生活</subtitle>
+  <link href="http://braveglide.github.io/atom.xml" rel="self"/>
   
-  <link href="http://marcos0221.github.io/"/>
+  <link href="http://braveglide.github.io/"/>
   <updated>2025-03-16T13:33:01.878Z</updated>
-  <id>http://marcos0221.github.io/</id>
+  <id>http://braveglide.github.io/</id>
   
   <author>
-    <name>Marcos0221</name>
+    <name>BraveGlide</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>问题记录</title>
-    <link href="http://marcos0221.github.io/2025/03/14/1ec7f9a0c5ce/"/>
-    <id>http://marcos0221.github.io/2025/03/14/1ec7f9a0c5ce/</id>
+    <link href="http://braveglide.github.io/2025/03/14/1ec7f9a0c5ce/"/>
+    <id>http://braveglide.github.io/2025/03/14/1ec7f9a0c5ce/</id>
     <published>2025-03-14T14:02:11.039Z</published>
     <updated>2025-03-16T13:33:01.878Z</updated>
     
@@ -33,15 +33,15 @@
     
     
     
-    <category term="经验闲谈" scheme="http://marcos0221.github.io/categories/%E7%BB%8F%E9%AA%8C%E9%97%B2%E8%B0%88/"/>
+    <category term="经验闲谈" scheme="http://braveglide.github.io/categories/%E7%BB%8F%E9%AA%8C%E9%97%B2%E8%B0%88/"/>
     
     
   </entry>
   
   <entry>
     <title>算法与数据结构之—顺序表</title>
-    <link href="http://marcos0221.github.io/2025/02/08/c76f1a741c41/"/>
-    <id>http://marcos0221.github.io/2025/02/08/c76f1a741c41/</id>
+    <link href="http://braveglide.github.io/2025/02/08/c76f1a741c41/"/>
+    <id>http://braveglide.github.io/2025/02/08/c76f1a741c41/</id>
     <published>2025-02-08T13:34:03.000Z</published>
     <updated>2025-03-13T04:26:29.403Z</updated>
     
@@ -60,16 +60,16 @@
     
     
     
-    <category term="C语言" scheme="http://marcos0221.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    <category term="C语言" scheme="http://braveglide.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
     
-    <category term="算法" scheme="http://marcos0221.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="http://braveglide.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>算法与数据结构</title>
-    <link href="http://marcos0221.github.io/2025/02/08/08c181fe7503/"/>
-    <id>http://marcos0221.github.io/2025/02/08/08c181fe7503/</id>
+    <link href="http://braveglide.github.io/2025/02/08/08c181fe7503/"/>
+    <id>http://braveglide.github.io/2025/02/08/08c181fe7503/</id>
     <published>2025-02-08T12:54:09.000Z</published>
     <updated>2025-03-13T04:26:40.199Z</updated>
     
@@ -85,14 +85,14 @@
     
     
     
-    <category term="算法" scheme="http://marcos0221.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    <category term="算法" scheme="http://braveglide.github.io/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
   <entry>
     <title>我的20岁</title>
-    <link href="http://marcos0221.github.io/2025/01/24/7c659f2dc35c/"/>
-    <id>http://marcos0221.github.io/2025/01/24/7c659f2dc35c/</id>
+    <link href="http://braveglide.github.io/2025/01/24/7c659f2dc35c/"/>
+    <id>http://braveglide.github.io/2025/01/24/7c659f2dc35c/</id>
     <published>2025-01-24T15:49:08.000Z</published>
     <updated>2025-03-13T04:25:09.525Z</updated>
     
@@ -108,16 +108,16 @@
     
     
     
-    <category term="随笔" scheme="http://marcos0221.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="http://braveglide.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
-    <category term="心情" scheme="http://marcos0221.github.io/tags/%E5%BF%83%E6%83%85/"/>
+    <category term="心情" scheme="http://braveglide.github.io/tags/%E5%BF%83%E6%83%85/"/>
     
   </entry>
   
   <entry>
     <title>安卓开发踩坑记录</title>
-    <link href="http://marcos0221.github.io/2025/01/18/618e2e50bf70/"/>
-    <id>http://marcos0221.github.io/2025/01/18/618e2e50bf70/</id>
+    <link href="http://braveglide.github.io/2025/01/18/618e2e50bf70/"/>
+    <id>http://braveglide.github.io/2025/01/18/618e2e50bf70/</id>
     <published>2025-01-17T17:05:51.474Z</published>
     <updated>2025-02-10T09:06:40.993Z</updated>
     
@@ -131,15 +131,15 @@
     
     
     
-    <category term="Android" scheme="http://marcos0221.github.io/categories/Android/"/>
+    <category term="Android" scheme="http://braveglide.github.io/categories/Android/"/>
     
     
   </entry>
   
   <entry>
     <title>《嵌入式系统中的神奇魔法——IAP详解》</title>
-    <link href="http://marcos0221.github.io/2024/12/12/168241c6184c/"/>
-    <id>http://marcos0221.github.io/2024/12/12/168241c6184c/</id>
+    <link href="http://braveglide.github.io/2024/12/12/168241c6184c/"/>
+    <id>http://braveglide.github.io/2024/12/12/168241c6184c/</id>
     <published>2024-12-12T12:08:37.000Z</published>
     <updated>2025-02-10T08:59:18.807Z</updated>
     
@@ -154,19 +154,19 @@
     
     
     
-    <category term="STM32" scheme="http://marcos0221.github.io/categories/STM32/"/>
+    <category term="STM32" scheme="http://braveglide.github.io/categories/STM32/"/>
     
     
-    <category term="STM32" scheme="http://marcos0221.github.io/tags/STM32/"/>
+    <category term="STM32" scheme="http://braveglide.github.io/tags/STM32/"/>
     
-    <category term="嵌入式" scheme="http://marcos0221.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    <category term="嵌入式" scheme="http://braveglide.github.io/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
     
   </entry>
   
   <entry>
     <title>想法</title>
-    <link href="http://marcos0221.github.io/2024/12/12/b465bfd7c1b3/"/>
-    <id>http://marcos0221.github.io/2024/12/12/b465bfd7c1b3/</id>
+    <link href="http://braveglide.github.io/2024/12/12/b465bfd7c1b3/"/>
+    <id>http://braveglide.github.io/2024/12/12/b465bfd7c1b3/</id>
     <published>2024-12-12T12:08:37.000Z</published>
     <updated>2025-03-14T13:25:12.139Z</updated>
     
@@ -184,16 +184,16 @@
     
     
     
-    <category term="随笔" scheme="http://marcos0221.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
+    <category term="随笔" scheme="http://braveglide.github.io/tags/%E9%9A%8F%E7%AC%94/"/>
     
-    <category term="心情" scheme="http://marcos0221.github.io/tags/%E5%BF%83%E6%83%85/"/>
+    <category term="心情" scheme="http://braveglide.github.io/tags/%E5%BF%83%E6%83%85/"/>
     
   </entry>
   
   <entry>
     <title>STM32代码配置模板</title>
-    <link href="http://marcos0221.github.io/2024/01/26/3fd3faff9761/"/>
-    <id>http://marcos0221.github.io/2024/01/26/3fd3faff9761/</id>
+    <link href="http://braveglide.github.io/2024/01/26/3fd3faff9761/"/>
+    <id>http://braveglide.github.io/2024/01/26/3fd3faff9761/</id>
     <published>2024-01-26T06:38:12.000Z</published>
     <updated>2025-01-07T11:51:57.000Z</updated>
     
@@ -207,17 +207,17 @@
     
     
     
-    <category term="STM32" scheme="http://marcos0221.github.io/categories/STM32/"/>
+    <category term="STM32" scheme="http://braveglide.github.io/categories/STM32/"/>
     
     
-    <category term="STM32" scheme="http://marcos0221.github.io/tags/STM32/"/>
+    <category term="STM32" scheme="http://braveglide.github.io/tags/STM32/"/>
     
   </entry>
   
   <entry>
     <title>C语言注释规范</title>
-    <link href="http://marcos0221.github.io/2023/10/13/a496743ab17d/"/>
-    <id>http://marcos0221.github.io/2023/10/13/a496743ab17d/</id>
+    <link href="http://braveglide.github.io/2023/10/13/a496743ab17d/"/>
+    <id>http://braveglide.github.io/2023/10/13/a496743ab17d/</id>
     <published>2023-10-13T12:53:53.000Z</published>
     <updated>2023-10-13T13:18:18.000Z</updated>
     
@@ -232,14 +232,14 @@
     
     
     
-    <category term="C语言" scheme="http://marcos0221.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
+    <category term="C语言" scheme="http://braveglide.github.io/tags/C%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
   <entry>
     <title>Git | commit 规范</title>
-    <link href="http://marcos0221.github.io/2023/10/02/e21da8549493/"/>
-    <id>http://marcos0221.github.io/2023/10/02/e21da8549493/</id>
+    <link href="http://braveglide.github.io/2023/10/02/e21da8549493/"/>
+    <id>http://braveglide.github.io/2023/10/02/e21da8549493/</id>
     <published>2023-10-02T07:22:04.000Z</published>
     <updated>2025-02-06T11:33:52.353Z</updated>
     
@@ -258,8 +258,8 @@
   
   <entry>
     <title>Termux配置NeoVim保姆级教程</title>
-    <link href="http://marcos0221.github.io/2022/09/25/7e590ba7e0f4/"/>
-    <id>http://marcos0221.github.io/2022/09/25/7e590ba7e0f4/</id>
+    <link href="http://braveglide.github.io/2022/09/25/7e590ba7e0f4/"/>
+    <id>http://braveglide.github.io/2022/09/25/7e590ba7e0f4/</id>
     <published>2022-09-24T17:11:55.000Z</published>
     <updated>2025-02-10T09:06:56.897Z</updated>
     
@@ -271,16 +271,16 @@
     
     
     
-    <category term="Termux" scheme="http://marcos0221.github.io/tags/Termux/"/>
+    <category term="Termux" scheme="http://braveglide.github.io/tags/Termux/"/>
     
-    <category term="Nvim" scheme="http://marcos0221.github.io/tags/Nvim/"/>
+    <category term="Nvim" scheme="http://braveglide.github.io/tags/Nvim/"/>
     
   </entry>
   
   <entry>
     <title>Termux编译运行SpringBoot</title>
-    <link href="http://marcos0221.github.io/2022/09/21/7f55d401c30d/"/>
-    <id>http://marcos0221.github.io/2022/09/21/7f55d401c30d/</id>
+    <link href="http://braveglide.github.io/2022/09/21/7f55d401c30d/"/>
+    <id>http://braveglide.github.io/2022/09/21/7f55d401c30d/</id>
     <published>2022-09-20T16:15:28.000Z</published>
     <updated>2023-09-26T13:33:42.000Z</updated>
     
@@ -292,20 +292,20 @@
     
     
     
-    <category term="Termux" scheme="http://marcos0221.github.io/tags/Termux/"/>
+    <category term="Termux" scheme="http://braveglide.github.io/tags/Termux/"/>
     
-    <category term="Java" scheme="http://marcos0221.github.io/tags/Java/"/>
+    <category term="Java" scheme="http://braveglide.github.io/tags/Java/"/>
     
-    <category term="SpringBoot" scheme="http://marcos0221.github.io/tags/SpringBoot/"/>
+    <category term="SpringBoot" scheme="http://braveglide.github.io/tags/SpringBoot/"/>
     
-    <category term="Spring" scheme="http://marcos0221.github.io/tags/Spring/"/>
+    <category term="Spring" scheme="http://braveglide.github.io/tags/Spring/"/>
     
   </entry>
   
   <entry>
     <title>Hello World!</title>
-    <link href="http://marcos0221.github.io/2022/09/20/c9b35e0eb932/"/>
-    <id>http://marcos0221.github.io/2022/09/20/c9b35e0eb932/</id>
+    <link href="http://braveglide.github.io/2022/09/20/c9b35e0eb932/"/>
+    <id>http://braveglide.github.io/2022/09/20/c9b35e0eb932/</id>
     <published>2022-09-20T07:13:14.000Z</published>
     <updated>2025-02-10T09:06:53.198Z</updated>
     
